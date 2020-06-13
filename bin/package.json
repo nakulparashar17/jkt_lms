@@ -1,0 +1,26 @@
+{
+  "name": "leave_management_system_jkt",
+  "version": "1.0.0",
+  "description": "leave_management_app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakulparashar17/Leave_management_system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nakulparashar17/Leave_management_system/issues"
+  },
+  "homepage": "https://github.com/nakulparashar17/Leave_management_system#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "create-react-app": "^3.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {}
+}
