@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-class Appp extends Component {
+class Manager extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,7 +11,7 @@ class Appp extends Component {
     }
 
     componentDidMount() {
-        axios.get("/employees").then((res) => {
+        axios.get("/managers").then((res) => {
             this.setState({ employees: res.data });
             console.log(this.state.employees);
         });
@@ -25,46 +25,18 @@ class Appp extends Component {
             <
             div className = "panel-heading" >
             <
-            center >
-            <
-            h2 className = "panel-title" > EMPLOYEES LIST < /h2> <
-            /center>{" "} <
+            center > < h2 className = "panel-title" > MANAGERS LIST < /h2></center > { " " } <
             /div>{" "} <
             div className = "panel-body" >
             <
-            ul className = "navbar-nav" >
+            h4 >
             <
-            li >
-            <
-            Link to = "/create" >
-            <
-            span className = "glyphicon glyphicon-plus-sign" > < /span> Add
-            Employee { " " } <
-            /Link>{" "} <
-            /li>{" "} <
-            /ul>{" "} <
-            ul className = "navbar-nav" >
-            <
-            li >
-            <
-            Link to = "/activeleaves" >
+            Link to = "/list" >
             <
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
-            Active Leaves { " " } <
+            Employees List { " " } <
             /Link>{" "} <
-            /li>{" "} <
-            /ul>{" "} <
-            ul className = "navbar-nav" >
-            <
-            li >
-            <
-            Link to = "/allmanager" >
-            <
-            span className = "glyphicon glyphicon-plus-sign" > < /span>All
-            Manager List { " " } <
-            /Link>{" "} <
-            /li>{" "} <
-            /ul>{" "} <
+            /h4>{" "} <
             table className = "table table-stripe" >
             <
             thead >
@@ -72,7 +44,7 @@ class Appp extends Component {
             tr >
             <
             th > ID < /th> <th> NAME </th > < th > EMAIL < /th>{" "} <
-            th > EARNED LEAVES < /th> <th> MANAGER ID </th > { " " } <
+            th > EARNED LEAVES < /th>{" "} <
             /tr>{" "} <
             /thead>{" "} <
             tbody > { " " } {
@@ -85,7 +57,6 @@ class Appp extends Component {
                     Link to = { `/show/${c.id}` } > { c.name } < /Link>{" "} <
                     /td>{" "} <
                     td > { c.email } < /td> <td> {c.earnedleaves} </td > { " " } <
-                    td > { c.manager_id } < /td>{" "} <
                     /tr>
                 ))
             } { " " } <
@@ -98,4 +69,4 @@ class Appp extends Component {
     }
 }
 
-export default Appp;
+export default Manager;

@@ -20,7 +20,7 @@ class Show extends Component {
     delete(id) {
         console.log(id);
         axios.delete("/employees/" + id).then((result) => {
-            this.props.history.push("/");
+            this.props.history.push("/list");
         });
     }
 
@@ -32,12 +32,12 @@ class Show extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > Employee Details < /h3>{" "} <
+            center > < h2 className = "panel-title" > Employee Details < /h2></center > { " " } <
             /div>{" "} <
             div className = "panel-body" >
             <
             h4 > { " " } <
-            Link to = "/" > { " " } <
+            Link to = "/list" > { " " } <
             span className = "glyphicon glyphicon-th-list" > < /span> Employees
             List { " " } <
             /Link>{" "} <

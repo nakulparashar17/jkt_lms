@@ -34,6 +34,11 @@ public class EmployeesController {
 		return empser.getAllEmployees();
 	}
 	
+  	@GetMapping("/managers")
+  	public List<Employees> getAllManager(){
+  		return emprepo.getAllManager();
+  	}
+  	
 	@GetMapping("/employees/{id}")
 	public Optional<Employees> getEmpbyId(@PathVariable int id)
 	{

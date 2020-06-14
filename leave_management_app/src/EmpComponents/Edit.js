@@ -48,7 +48,7 @@ class Edit extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > EDIT Employee < /h3>{" "} <
+            center > < h2 className = "panel-title" > EDIT Employee < /h2></center > { " " } <
             /div>{" "} <
             div className = "panel-body" >
             <

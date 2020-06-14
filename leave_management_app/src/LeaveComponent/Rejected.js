@@ -23,7 +23,7 @@ class Rejected extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > Rejected Leaves < /h3>{" "} <
+            center > < h2 className = "panel-title" > Rejected Leaves < /h2></center > { " " } <
             h4 >
             <
             Link to = "/activeleaves" >

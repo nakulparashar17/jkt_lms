@@ -23,7 +23,8 @@ class Approved extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > Approved Leaves < /h3>{" "} <
+            center > < h2 className = "panel-title" > Approved Leaves < /h2></center > { " " } <
+            /div> <
             h4 >
             <
             Link to = "/activeleaves" >
@@ -32,7 +33,6 @@ class Approved extends Component {
             Leaves { " " } <
             /Link>{" "} <
             /h4>{" "} <
-            /div>{" "} <
             div className = "panel-body" >
             <
             table className = "table table-stripe" >

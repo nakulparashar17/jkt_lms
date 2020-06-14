@@ -24,32 +24,42 @@ class ActiveLeaves extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > Active leaves < /h3>{" "} <
-            h5 >
+            center > < h2 className = "panel-title" > Active leaves < /h2></center >
+            <
+            /div>{" "} <
+            ul className = "navbar-nav" >
+            <
+            li >
             <
             Link to = "/approved" >
             <
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
             Approved Leaves { " " } <
             /Link>{" "} <
-            /h5>{" "} <
-            h5 >
+            /li> <
+            /ul> <
+            ul className = "navbar-nav" >
+            <
+            li >
             <
             Link to = "/rejected" >
             <
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
             Rejected Leaves { " " } <
             /Link>{" "} <
-            /h5>{" "} <
-            h4 >
+            /li> <
+            /ul> <
+            ul className = "navbar-nav" >
             <
-            Link to = "/" >
+            li >
+            <
+            Link to = "/list" >
             <
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
             Employees List { " " } <
             /Link>{" "} <
-            /h4>{" "} <
-            /div>{" "} <
+            /li>{" "} <
+            /ul>{" "} <
             div className = "panel-body" >
             <
             table className = "table table-stripe" >

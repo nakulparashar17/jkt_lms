@@ -59,7 +59,7 @@ class ShowLeave extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > Leave Details < /h3>{" "} <
+            center > < h2 className = "panel-title" > Leave Details < /h2></center > { " " } <
             /div>{" "} <
             div className = "panel-body" >
             <

@@ -39,12 +39,12 @@ class Create extends Component {
             <
             div className = "panel-heading" >
             <
-            h3 className = "panel-title" > ADD EMPLOYEE < /h3>{" "} <
+            center > < h2 className = "panel-title" > ADD EMPLOYEE < /h2></center > { " " } <
             /div>{" "} <
             div className = "panel-body" >
             <
             h4 > { " " } <
-            Link to = "/" > { " " } <
+            Link to = "/list" > { " " } <
             span className = "glyphicon glyphicon-th-list" > < /span> Employees
             List { " " } <
             /Link>{" "} <
