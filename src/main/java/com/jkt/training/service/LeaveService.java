@@ -65,9 +65,9 @@ public class LeaveService {
 	
 	//MAPPING SERVICE METHOD FOR GETTING AND SETTING LEAVES ACCORDING TO EMPLOYEES
 	
-	public List<LeavesTrack> getAllLeavesByEmployeeId(int eid) {
+	public List<LeavesTrack> getAllLeavesByUserId(int eid) {
 		List<LeavesTrack> leaves=new ArrayList<LeavesTrack>();
-		repository.findByEmployeeId(eid).forEach(leaves::add);
+		repository.findByUsersId(eid).forEach(leaves::add);
 		return leaves;
 	}
 	

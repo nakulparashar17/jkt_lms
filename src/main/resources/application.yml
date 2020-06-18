@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: root
-    password: admin
-    url: jdbc:mysql://localhost:3306/jktlms
+    password: root123
+    url: jdbc:mysql://localhost:3306/itimersalesforce
   jpa:
     hibernate:
       ddl-auto: update

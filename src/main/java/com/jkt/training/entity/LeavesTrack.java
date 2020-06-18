@@ -45,7 +45,7 @@ public class LeavesTrack {
 	private boolean active;
 	
 	@ManyToOne
-	private Employees employee;
+	private Users users;
 
 	public LeavesTrack() {
 		super();
@@ -75,7 +75,7 @@ public class LeavesTrack {
 			@NotEmpty(message = "please provide reason for leave") String reason,
 			@NotNull(message = "please provide start date") Date fromDate,
 			@NotNull(message = "please provide end date") Date toDate, int duration, boolean acceptRejectFlag,
-			boolean active, int eid) {
+			boolean active, String eid) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -85,7 +85,7 @@ public class LeavesTrack {
 		this.duration = duration;
 		this.acceptRejectFlag = acceptRejectFlag;
 		this.active = active;
-		this.employee = new Employees(eid);
+		this.users = new Users(eid);
 	}
 
 
@@ -98,14 +98,14 @@ public class LeavesTrack {
 		this.id = id;
 	}
 
-	public Employees getEmployee() {
-		return employee;
+	public Users getUsers() {
+		return users;
 	}
 
 
 
-	public void setEmployee(Employees employee) {
-		this.employee = employee;
+	public void setUsers(Users users) {
+		this.users = users;
 	}
 
 

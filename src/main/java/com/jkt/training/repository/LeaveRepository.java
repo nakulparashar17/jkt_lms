@@ -10,7 +10,7 @@ import com.jkt.training.entity.LeavesTrack;
 
 public interface LeaveRepository extends JpaRepository<LeavesTrack, Integer> {
 
-	public List<LeavesTrack> findByEmployeeId(int eid);
+	public List<LeavesTrack> findByUsersId(int eid);
 	
 	@Query(nativeQuery = true, value = "select * from leaves_track where active=true")
 	public List<LeavesTrack> getAllActiveLeaves();

@@ -18,11 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.jkt.training.entity.Employees;
 import com.jkt.training.entity.LeavesTrack;
-import com.jkt.training.repository.EmployeeRepository;
+import com.jkt.training.entity.Users;
 import com.jkt.training.repository.LeaveRepository;
+import com.jkt.training.repository.UsersRepository;
 import com.jkt.training.service.LeaveService;
 
 @CrossOrigin(origins = "http://localhost:8000")
@@ -36,7 +35,7 @@ public class LeavesController {
 	private LeaveRepository repository;
 	
 	@Autowired
-	private EmployeeRepository repo;
+	private UsersRepository userrepo;
 	
 	@GetMapping("/leaves")
 	public List<LeavesTrack> getAllLeaves(){
@@ -49,11 +48,11 @@ public class LeavesController {
 		System.out.println(flag);
 		LeavesTrack l=lea.get();
 		System.out.print(l.getReason());
-		Employees emp=l.getEmployee();
+		Users user=l.getUsers();
 		if(flag.equals("success")) {
-			emp.setEarnedleaves(emp.getEarnedleaves()-l.getDuration());
-			repo.save(emp);
-			l.setEmployee(emp);
+			//emp.setEarnedleaves(emp.getEarnedleaves()-l.getDuration());
+			userrepo.save(user);
+			l.setUsers(user);
 			l.setActive(false);
 			l.setAcceptRejectFlag(true);
 		}
@@ -66,12 +65,12 @@ public class LeavesController {
 		return l;
 	}
 	
-	@GetMapping("/employees/{eid}/leaves")
-	public List<LeavesTrack> getAllLeavesByEmployeeId(@PathVariable int eid){
-		return service.getAllLeavesByEmployeeId(eid);
+	@GetMapping("/users/{id}/leaves")
+	public List<LeavesTrack> getAllLeavesByUserId(@PathVariable int id){
+		return service.getAllLeavesByUserId(id);
 	}
 	
-	@GetMapping("employees/{eid}/leaves/{l_id}")
+	@GetMapping("users/{id}/leaves/{l_id}")
 	public ResponseEntity<?> getLeavesById(@PathVariable int l_id) {
 		Optional<LeavesTrack> leaves= service.getLeavesById(l_id);
 		return leaves.map(response->ResponseEntity.ok().body(response))
@@ -106,10 +105,11 @@ public class LeavesController {
 
 	}
 	
+	
 	//employee with leaves
-	@PostMapping(path = "/employees/{eid}/leaves",consumes = "application/json")
-	public ResponseEntity<LeavesTrack> applyEmployeeLeaves(@Valid @RequestBody LeavesTrack leaves,@PathVariable int eid)throws URISyntaxException{
-		leaves.setEmployee(new Employees(eid));
+	@PostMapping(path = "/users/{id}/leaves",consumes = "application/json")
+	public ResponseEntity<LeavesTrack> applyEmployeeLeaves(@Valid @RequestBody LeavesTrack leaves,@PathVariable String id)throws URISyntaxException{
+		leaves.setUsers(new Users(id));
 		LeavesTrack result=service.applyLeaves(leaves);
 		return ResponseEntity.created(new URI("/api/leaves"+result.getId())).body(result);
 	}
@@ -121,15 +121,15 @@ public class LeavesController {
 		return ResponseEntity.ok().body(result);
 	}
 	
-	@PutMapping(path = "/employees/{eid}/leaves/{l_id}",consumes = "application/json")
-	ResponseEntity<LeavesTrack> updateLeavesByEmployeeId(@Valid @RequestBody LeavesTrack leaves,@PathVariable int l_id,@PathVariable int eid){
+	@PutMapping(path = "/users/{id}/leaves/{l_id}",consumes = "application/json")
+	ResponseEntity<LeavesTrack> updateLeavesByEmployeeId(@Valid @RequestBody LeavesTrack leaves,@PathVariable int l_id,@PathVariable String id){
 		//LeavesTrack result=service.updateLeaves(leaves,l_id);;
-		leaves.setEmployee(new Employees(eid));
+		leaves.setUsers(new Users(id));
 		LeavesTrack result=service.applyLeaves(leaves);
 		return ResponseEntity.ok().body(result);
 	}
 	
-	@DeleteMapping("/employees/{eid}/leaves/{l_id}")
+	@DeleteMapping("/users/{eid}/leaves/{l_id}")
 	ResponseEntity<?> deleteLeaves(@PathVariable int l_id){
 		service.deleteLeaves(l_id);
 		return ResponseEntity.ok().build();
