@@ -46,7 +46,7 @@ class ApplyLeave extends Component {
                 toDate,
             })
             .then((result) => {
-                this.props.history.push("/list");
+                this.props.history.push("/activeleaves");
             });
     };
 
@@ -59,7 +59,9 @@ class ApplyLeave extends Component {
             <
             div className = "panel-heading" >
             <
-            center > < h2 className = "panel-title" > ADD Leaves < /h2></center > { " " } <
+            center > { " " } <
+            h2 className = "panel-title" > ADD Leaves < /h2>{" "} <
+            /center>{" "} <
             /div>{" "} <
             div className = "panel-body" >
             <
@@ -75,33 +77,41 @@ class ApplyLeave extends Component {
             <
             label
             for = "isbn" > Type: < /label>{" "} <
-            input type = "text"
-            class = "form-control"
+            select className = "form-control"
             name = "type"
             value = { type }
-            onChange = { this.onChange }
-            placeholder = "Type" /
-            >
+            onChange = { this.onChange } >
             <
-            /div>{" "} <
-            div className = "form-group" >
-            <
-            label
-            for = "publisher" > Reason: < /label>{" "} <
-            input type = "text"
-            class = "form-control"
-            name = "reason"
-            value = { reason }
-            onChange = { this.onChange }
-            placeholder = "Reason" /
-            >
-            <
+            option value = "" > Select < /option>{" "} <
+            option value = "Earned Leave" > Earned Leave < /option>{" "} <
+            option value = "Accumulated Earned Leave" > { " " }
+            Accumulated Earned Leave { " " } <
+            /option>{" "} <
+            option value = "Leave Without Pay" > { " " }
+            Leave Without Pay { " " } <
+            /option>{" "} <
+            option value = "Maternity Leave" > { " " }
+            Maternity Leave { " " } <
+            /option>{" "} <
+            option value = "Maternity Leave(Miscarriage)" > { " " }
+            Maternity Leave(Miscarriage) { " " } <
+            /option>{" "} <
+            option value = "Maternity Leave(Adoption or Surrogacy)" > { " " }
+            Maternity Leave(Adoption or Surrogacy) { " " } <
+            /option>{" "} <
+            option value = "Compansatory Off" > { " " }
+            Compansatory Off { " " } <
+            /option>{" "} <
+            option value = "Work From Home" > Work From Home < /option>{" "} <
+            option value = "On Duty" > On Duty < /option>{" "} <
+            /select>{" "} <
             /div>{" "} <
             div className = "form-group" >
             <
             label
             for = "password" > From Date: < /label>{" "} <
-            DatePicker selected = { fromDate }
+            DatePicker className = "form-control"
+            selected = { fromDate }
             onChange = { this.handleDateChangefrom }
             name = "fromDate"
             dateFormat = "MM/dd/yyyy" /
@@ -112,10 +122,24 @@ class ApplyLeave extends Component {
             <
             label
             for = "published_date" > To Date: < /label>{" "} <
-            DatePicker selected = { toDate }
+            DatePicker className = "form-control"
+            selected = { toDate }
             onChange = { this.handleDateChangeto }
             name = "toDate"
             dateFormat = "MM/dd/yyyy" /
+            >
+            <
+            /div>{" "} <
+            div className = "form-group" >
+            <
+            label
+            for = "publisher" > Reason: < /label>{" "} <
+            textarea type = "text"
+            class = "form-control"
+            name = "reason"
+            value = { reason }
+            onChange = { this.onChange }
+            placeholder = "Reason" /
             >
             <
             /div>{" "} <

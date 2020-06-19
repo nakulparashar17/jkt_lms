@@ -36,9 +36,9 @@ class LoginComponent extends Component {
   }
   render() {
     return (
+        <center>
       <div>
         <center><h1>Login</h1></center>
-        <center>
         <div className="container">
           {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
           {this.state.hasLoginFailed && (
@@ -68,9 +68,8 @@ class LoginComponent extends Component {
             Login
           </button>
         </div>
-        </center>
-      </div>
-      
+              </div>
+              </center>
     );
   }
 }

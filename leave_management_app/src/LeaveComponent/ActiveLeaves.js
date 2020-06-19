@@ -24,8 +24,9 @@ class ActiveLeaves extends Component {
             <
             div className = "panel-heading" >
             <
-            center > < h2 className = "panel-title" > Active leaves < /h2></center >
-            <
+            center > { " " } <
+            h2 className = "panel-title" > Active leaves < /h2>{" "} <
+            /center>{" "} <
             /div>{" "} <
             ul className = "navbar-nav" >
             <
@@ -36,8 +37,8 @@ class ActiveLeaves extends Component {
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
             Approved Leaves { " " } <
             /Link>{" "} <
-            /li> <
-            /ul> <
+            /li>{" "} <
+            /ul>{" "} <
             ul className = "navbar-nav" >
             <
             li >
@@ -47,8 +48,8 @@ class ActiveLeaves extends Component {
             span className = "glyphicon glyphicon-plus-sign" > < /span>{" "}
             Rejected Leaves { " " } <
             /Link>{" "} <
-            /li> <
-            /ul> <
+            /li>{" "} <
+            /ul>{" "} <
             ul className = "navbar-nav" >
             <
             li >
@@ -70,7 +71,7 @@ class ActiveLeaves extends Component {
             <
             th > ID < /th> <th> Type </th > < th > REASON < /th>{" "} <
             th > FROM DATE < /th> <th> TO DATE </th > < th > DURATION < /th>{" "} <
-            th > EMPLOYEE ID < /th>{" "} <
+            th > EMPLOYEE NAME < /th>{" "} <
             /tr>{" "} <
             /thead>{" "} <
             tbody > { " " } {
@@ -84,7 +85,7 @@ class ActiveLeaves extends Component {
                     /td>{" "} <
                     td > { c.reason } < /td> <td> {c.fromDate} </td > { " " } <
                     td > { c.toDate } < /td> <td> {c.duration} </td > { " " } <
-                    td > { c.employee_id } < /td>{" "} <
+                    td > { c.employee.name } < /td>{" "} <
                     /tr>
                 ))
             } { " " } <

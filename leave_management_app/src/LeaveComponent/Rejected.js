@@ -23,7 +23,9 @@ class Rejected extends Component {
             <
             div className = "panel-heading" >
             <
-            center > < h2 className = "panel-title" > Rejected Leaves < /h2></center > { " " } <
+            center > { " " } <
+            h2 className = "panel-title" > Rejected Leaves < /h2>{" "} <
+            /center>{" "} <
             h4 >
             <
             Link to = "/activeleaves" >
@@ -43,7 +45,7 @@ class Rejected extends Component {
             <
             th > ID < /th> <th> Type </th > < th > REASON < /th>{" "} <
             th > FROM DATE < /th> <th> TO DATE </th > < th > DURATION < /th>{" "} <
-            th > EMPLOYEE ID < /th>{" "} <
+            th > EMPLOYEE Name < /th>{" "} <
             /tr>{" "} <
             /thead>{" "} <
             tbody > { " " } {
@@ -51,13 +53,11 @@ class Rejected extends Component {
                     tr >
                     <
                     td > { c.id } < /td>{" "} <
-                    td >
-                    <
-                    Link to = { `/showleave/${c.id}` } > { c.type } < /Link>{" "} <
+                    td > { c.type } <
                     /td>{" "} <
                     td > { c.reason } < /td> <td> {c.fromDate} </td > { " " } <
                     td > { c.toDate } < /td> <td> {c.duration} </td > { " " } <
-                    td > { c.employee_id } < /td>{" "} <
+                    td > { c.employee.name } < /td>{" "} <
                     /tr>
                 ))
             } { " " } <

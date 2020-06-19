@@ -27,7 +27,7 @@ class Appp extends Component {
             <
             center >
             <
-            h2 className = "panel-title" > EMPLOYEES LIST < /h2> <
+            h2 className = "panel-title" > EMPLOYEES LIST < /h2>{" "} <
             /center>{" "} <
             /div>{" "} <
             div className = "panel-body" >
@@ -85,7 +85,7 @@ class Appp extends Component {
                     Link to = { `/show/${c.id}` } > { c.name } < /Link>{" "} <
                     /td>{" "} <
                     td > { c.email } < /td> <td> {c.earnedleaves} </td > { " " } <
-                    td > { c.manager_id } < /td>{" "} <
+                    td > { c.name } < /td>{" "} <
                     /tr>
                 ))
             } { " " } <

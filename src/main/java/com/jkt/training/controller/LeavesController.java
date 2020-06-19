@@ -111,7 +111,7 @@ public class LeavesController {
 	public ResponseEntity<LeavesTrack> applyEmployeeLeaves(@Valid @RequestBody LeavesTrack leaves,@PathVariable int eid)throws URISyntaxException{
 		leaves.setEmployee(new Employees(eid));
 		LeavesTrack result=service.applyLeaves(leaves);
-		return ResponseEntity.created(new URI("/api/leaves"+result.getId())).body(result);
+		return ResponseEntity.created(new URI("/leaves"+result.getId())).body(result);
 	}
 	
 	@PutMapping(path = "/leaves/{l_id}",consumes = "application/json")

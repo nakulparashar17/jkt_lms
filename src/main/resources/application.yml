@@ -6,7 +6,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true  security:    user:      name: 'in28minutes'
-      password: 'dummy'
+    show-sql: true  security:    user:      name: 'rahul.jkt@jktech.com'
+      password: 'rahul123'
     
 server:  port: 8000
